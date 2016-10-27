@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Raymond Aumannn</title>
+	<link href="http://salukicode.com/css/main.min.css" rel="stylesheet" type="text/css">
+	<style>
+	body {
+		background: #c0c0c0;
+		color: black;
+	}
+	header, footer {
+		text-align: center;
+	}
+	nav {
+		margin-top: .25%;
+	}
+	nav ul {
+		display: inline-block;
+		list-style-type: none;
+	}
+	nav li {
+		float: left;
+		-webkit-padding-start: 0px;
+		padding-right: .4em
+	}	
+	.link_menu {
+		display: none
+	}
+	.link_menu li{
+		float: right;
+		display: block
+	}
+	hoverli {
+		text-align: center
+	}
+	a {
+		color: black;
+	}
+	img {
+		width: 14em
+	}
+	.email a {
+		color: maroon;
+	}
+	main {
+		margin: 1% 5%;
+	}
+	section {
+		padding: .5% 5%;
+		background: white;
+		color: white;
+		border: 1px solid black;
+		border-radius: 20px;
+		margin: .5em;
+	}
+	input {
+		margin-left: .2em;
+		margin-bottom: 1em;
+	}
+	body {
+		background: turquoise;
+	}
+	#design {
+		list-style-type: none;
+		-webkit-padding-start: 0px;
+	}
+	textarea {
+		display: block;
+		width: 100%;
+		margin-top: 1em;
+	}
+	#controller {
+		padding-bottom: 1em;
+	}
+	button {
+		background-color: black;
+		border: none;
+		color: white;
+		padding: 6px 16px; /* dimensions of box */
+		font-size: 1.1em;
+		text-align: center;
+		cursor: pointer;
+	}
+	.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+	}
+	.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-extra {
+    padding: 2px 16px;
+    background-color: #600;
+    color: white;
+}
+.modal-body {padding: 2px 16px;}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+</head>
+<body style="background: maroon;">
+	<header>
+		<h1>Raymond Aumann's Page</h1>
+		<img alt="siulogo" src="http://mcma.siu.edu/_common/images/rree/governerquinn.jpg" id="siulogo">
+		<nav>
+			<ul>
+				<li class="hoverli">
+					<p>My Pages:</p>
+					<ul class="link_menu">
+			<li><a href="https://www.facebook.com/people/Raymond-Aumann/100010767618846">Facebook</a></li>
+			<li><a href="http://salukicode.com/">Saluki Code</a></li>
+			<li><a href="https://www.youtube.com/channel/UCVQh0FJImSrWYzxB4ZbWe6A">YouTube</a></li>
+			</ul>
+				</li>
+		</nav>
+	</header>
+	<main>
+		<section id="welcome" style="color: black;">
+			<h1>Welcome <span class="myName">to the site:</span></h1>
+			<p>Learn about me, what I enjoy, my majors, and my schedule.</p>
+		</section>
+		<section id="about" style="color: black;">
+			<h1> About Me</h1>
+			<p>I enjoy math, physics, meeting new people, reading, completing crosswords and playing video games.</p>
+		</section>
+		<section id="classes" style="color: black;">
+			<h1>Classes I'm taking:</h1>
+			<ul id="classList">
+				<li>UCOL 101</li>
+				<li>Math 150</li>
+				<li>Chem 200/201</li>
+				<li>ME 102</li>
+				<li>English 101</li>
+				<li>CMST 101</li>
+			</ul>
+		</section>
+		<section id="extra" style="color: black;">
+			<h1>What I do outside of class:</h1>
+			<ul id="extraList">
+				<li>Saluki Code, the best club on campus</li>
+				<li>SIU robotics</li>
+				<li>MakerSpace</li>
+				<li>Reading</li>
+				<li>Crosswords</li>
+			</ul>
+		</section>
+		<section id="fun" style="color: black;">
+			<h1>Workspace</h1>
+            <button id="myBtn">Open Modal</button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-extra">
+                      <span class="close">×</span>
+                      <h2>This is a workshop</h2>
+                    </div>
+                    <div class="modal-body">
+                      <p>Saluki Code is Awesome. It really is.</p>
+                      <p>Like, <em>really</em> awesome</p>
+                      <p>I'm just here experimenting with this, hence the name workshop. </p>
+                      <img src="https://media2.giphy.com/media/52LkAuJYMzjt6/200_s.gif">
+                      <br>
+                    </div>
+                    <div class="modal-extra">
+                      <h3>After workshop</h3>
+                    </div>
+                </div>
+                
+            </div>
+		</section>
+	</main>
+	<script>
+	// Hover-based menu
+		$("nav .hoverli").hover(function () {
+			$('.link_menu').slideDown('fast')
+		}, function() {
+			$('.link_menu').slideUp('fast')
+		});
+		</script>
+		<script>
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
